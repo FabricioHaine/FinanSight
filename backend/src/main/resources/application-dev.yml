@@ -1,0 +1,11 @@
+spring:
+  jpa:
+    show-sql: false
+
+finansight:
+  demo:
+    enabled: ${FINANSIGHT_DEMO_ENABLED:true}
+
+logging:
+  level:
+    com.finansight: DEBUG

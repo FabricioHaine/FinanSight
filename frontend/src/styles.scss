@@ -1,0 +1,470 @@
+@use 'styles/tokens';
+
+// =============================================================================
+// FinanSight - estilos globais
+// =============================================================================
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  background-color: var(--fs-bg-primary);
+  color: var(--fs-text-primary);
+  font-family: var(--fs-font-family);
+  font-size: var(--fs-text-base);
+  line-height: var(--fs-leading-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: 600;
+  line-height: var(--fs-leading-tight);
+  letter-spacing: -0.01em;
+  color: var(--fs-text-primary);
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--fs-accent-soft);
+  text-decoration: none;
+  transition: color var(--fs-transition-fast);
+
+  &:hover {
+    color: var(--fs-accent-light);
+  }
+}
+
+button {
+  font-family: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--fs-accent);
+  outline-offset: 2px;
+  border-radius: var(--fs-radius-xs);
+}
+
+// --------------------------------------------------------------- Tipografia
+.fs-display {
+  font-size: var(--fs-text-3xl);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.fs-page-title {
+  font-size: var(--fs-text-2xl);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.fs-section-title {
+  font-size: var(--fs-text-md);
+  font-weight: 600;
+}
+
+.fs-label {
+  font-size: var(--fs-text-xs);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--fs-text-muted);
+}
+
+.fs-body {
+  font-size: var(--fs-text-base);
+  color: var(--fs-text-secondary);
+}
+
+.fs-caption {
+  font-size: var(--fs-text-sm);
+  color: var(--fs-text-muted);
+}
+
+// Valores monetarios: numerais tabulares alinham colunas financeiras.
+.fs-numeric,
+.fs-money {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum' 1;
+}
+
+.fs-money {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.fs-money--lg {
+  font-size: var(--fs-text-2xl);
+}
+
+.fs-money--md {
+  font-size: var(--fs-text-xl);
+}
+
+.fs-money--sm {
+  font-size: var(--fs-text-md);
+}
+
+.fs-positive {
+  color: var(--fs-success);
+}
+
+.fs-negative {
+  color: var(--fs-danger);
+}
+
+.fs-muted {
+  color: var(--fs-text-muted);
+}
+
+.fs-secondary {
+  color: var(--fs-text-secondary);
+}
+
+// ------------------------------------------------------------------- Layout
+.fs-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--fs-space-5);
+  max-width: var(--fs-content-max-width);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.fs-grid {
+  display: grid;
+  gap: var(--fs-space-4);
+}
+
+.fs-grid--stats {
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+.fs-grid--2 {
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.fs-grid--wide {
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  align-items: start;
+}
+
+@media (max-width: 1100px) {
+  .fs-grid--wide {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+// -------------------------------------------------------------------- Cartao
+.fs-card {
+  background: var(--fs-surface);
+  border: 1px solid var(--fs-border);
+  border-radius: var(--fs-radius-lg);
+  box-shadow: var(--fs-shadow-card);
+  padding: var(--fs-space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--fs-space-4);
+  min-width: 0;
+}
+
+.fs-card--flush {
+  padding: 0;
+  overflow: hidden;
+}
+
+.fs-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--fs-space-3);
+  padding: var(--fs-space-4) var(--fs-space-5);
+  border-bottom: 1px solid var(--fs-border);
+}
+
+.fs-card__title {
+  font-size: var(--fs-text-md);
+  font-weight: 600;
+}
+
+.fs-card__subtitle {
+  font-size: var(--fs-text-sm);
+  color: var(--fs-text-muted);
+  margin-top: 2px;
+}
+
+.fs-card__body {
+  padding: var(--fs-space-5);
+}
+
+.fs-card__footer {
+  padding: var(--fs-space-3) var(--fs-space-5);
+  border-top: 1px solid var(--fs-border);
+}
+
+// ------------------------------------------------------------------ Botoes
+.fs-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--fs-space-2);
+  flex-wrap: wrap;
+}
+
+.fs-toolbar {
+  display: flex;
+  align-items: center;
+  gap: var(--fs-space-3);
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.fs-toolbar__group {
+  display: flex;
+  align-items: center;
+  gap: var(--fs-space-2);
+  flex-wrap: wrap;
+}
+
+// --------------------------------------------------------- Estados de carga
+.fs-skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--fs-surface-elevated) 25%,
+    var(--fs-surface-selected) 37%,
+    var(--fs-surface-elevated) 63%
+  );
+  background-size: 400% 100%;
+  animation: fs-shimmer 1.4s ease infinite;
+  border-radius: var(--fs-radius-sm);
+}
+
+@keyframes fs-shimmer {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+// ------------------------------------------------------ Acessibilidade
+.fs-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// ------------------------------------------------- Ajustes nos componentes
+// PrimeNG: botao de largura total em formularios
+.fs-submit {
+  width: 100%;
+
+  .p-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+// PrimeNG: tabelas dentro de cartoes sem borda dupla
+.p-datatable .p-datatable-thead > tr > th,
+.p-datatable .p-datatable-tbody > tr > td {
+  padding: 0.75rem 1rem;
+  font-size: var(--fs-text-sm);
+  border-width: 0 0 1px 0;
+}
+
+.p-datatable .p-datatable-thead > tr > th {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: var(--fs-text-xs);
+}
+
+.p-datatable .p-datatable-tbody > tr:last-child > td {
+  border-bottom: none;
+}
+
+.p-datatable .p-datatable-tbody > tr > td {
+  color: var(--fs-text-secondary);
+}
+
+.p-datatable .p-datatable-tbody > tr > td.fs-strong,
+.p-datatable .p-datatable-tbody > tr > td strong {
+  color: var(--fs-text-primary);
+  font-weight: 600;
+}
+
+// PrimeNG: paginador compacto
+.p-paginator {
+  font-size: var(--fs-text-sm);
+  border-radius: var(--fs-radius-md);
+  border: 1px solid var(--fs-border);
+  overflow: hidden;
+}
+
+.p-paginator .p-paginator-page,
+.p-paginator .p-paginator-first,
+.p-paginator .p-paginator-prev,
+.p-paginator .p-paginator-next,
+.p-paginator .p-paginator-last {
+  min-width: 2.25rem;
+  height: 2.25rem;
+  border-radius: var(--fs-radius-sm);
+}
+
+// PrimeNG: inputs com altura confortavel
+.p-inputtext,
+.p-select,
+.p-textarea,
+.p-datepicker-input,
+.p-inputnumber-input {
+  font-family: var(--fs-font-family);
+  font-size: var(--fs-text-base);
+}
+
+// PrimeNG: rotulos de formulario
+.fs-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--fs-space-2);
+}
+
+.fs-field__label {
+  font-size: var(--fs-text-sm);
+  font-weight: 500;
+  color: var(--fs-text-secondary);
+}
+
+.fs-field__error {
+  display: flex;
+  align-items: center;
+  gap: var(--fs-space-1);
+  font-size: var(--fs-text-sm);
+  color: var(--fs-danger);
+}
+
+.fs-field--invalid .p-inputtext,
+.fs-field--invalid .p-select,
+.fs-field--invalid .p-textarea,
+.fs-field--invalid .p-datepicker-input {
+  border-color: var(--fs-danger);
+}
+
+// PrimeNG: dialogo com animacao discreta
+.p-dialog {
+  animation: fs-dialog-in var(--fs-transition-slow) both;
+}
+
+@keyframes fs-dialog-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.p-toast-message {
+  animation: fs-toast-in var(--fs-transition-base) both;
+}
+
+@keyframes fs-toast-in {
+  from {
+    opacity: 0;
+    transform: translateX(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// PrimeNG: toast sem ícone gigante
+.p-toast-message .p-toast-message-content {
+  align-items: flex-start;
+}
+
+.p-toast-summary {
+  font-size: var(--fs-text-base);
+}
+
+// PrimeNG: calendario
+.p-datepicker-panel {
+  font-size: var(--fs-text-sm);
+}
+
+.p-datepicker-day-selected {
+  color: var(--fs-text-inverse) !important;
+}
+
+// PrimeNG: barra de progresso
+.p-progressbar {
+  height: 6px;
+}
+
+.p-progressbar-value {
+  transition: width var(--fs-transition-slow);
+}
+
+// PrimeNG: tabela responsiva - evita rolagem horizontal da página
+.p-datatable-wrapper {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+// ------------------------------------------------------------------ Responsivo
+@media (max-width: 720px) {
+  .fs-card {
+    padding: var(--fs-space-4);
+  }
+
+  .fs-card__header,
+  .fs-card__body,
+  .fs-card__footer {
+    padding-left: var(--fs-space-4);
+    padding-right: var(--fs-space-4);
+  }
+
+  .fs-page-title {
+    font-size: var(--fs-text-xl);
+  }
+}
+
+// ------------------------------------------------- Respeita preferencia de movimento
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

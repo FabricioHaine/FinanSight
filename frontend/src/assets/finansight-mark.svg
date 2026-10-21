@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-label="FinanSight">
+  <defs>
+    <linearGradient id="fsMarkStroke" x1="8" y1="40" x2="40" y2="8" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8FB3D9"/>
+      <stop offset="1" stop-color="#6B8EFF"/>
+    </linearGradient>
+  </defs>
+  <path d="M39.41 16.82A17 17 0 1 1 26.95 7.26"
+        fill="none" stroke="url(#fsMarkStroke)" stroke-width="2.4" stroke-linecap="round" opacity="0.55"/>
+  <path d="M11.5 31.5 18.2 24.6 23.6 28.6 34.8 15.2"
+        fill="none" stroke="url(#fsMarkStroke)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="34.8" cy="15.2" r="3.4" fill="#6B8EFF"/>
+  <circle cx="34.8" cy="15.2" r="6.4" fill="#6B8EFF" opacity="0.18"/>
+</svg>

@@ -1,0 +1,33 @@
+# Build
+dist/
+target/
+build/
+out/
+*.jar
+*.war
+*.class
+
+# Dependências
+node_modules/
+.pnpm-store/
+
+# Ambiente
+.env
+.env.local
+.env.*.local
+
+# Ferramentas / IDE
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.iml
+*.log
+.DS_Store
+Thumbs.db
+
+# Testes
+coverage/
+.nyc_output/
+
+# Ferramentas locais (Maven, screenshots, etc.)
+.tools/

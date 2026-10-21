@@ -1,0 +1,95 @@
+// =============================================================================
+// FinanSight - Midnight Design System
+// Tokens globais. Todos os componentes consomem estas variaveis, evitando
+// duplicacao de valores e mantendo a identidade visual consistente.
+// =============================================================================
+
+:root {
+  // ---------------------------------------------------------------- Fundos
+  --fs-bg-primary: #07111f;
+  --fs-bg-secondary: #0a1524;
+  --fs-surface: #0d192a;
+  --fs-surface-elevated: #101e32;
+  --fs-surface-selected: #172a44;
+  --fs-surface-overlay: #0d192a;
+
+  // ---------------------------------------------------------------- Bordas
+  --fs-border: #20314a;
+  --fs-border-strong: #2c3f5c;
+  --fs-border-subtle: #16243a;
+
+  // -------------------------------------------------------------- Destaques
+  --fs-accent: #6b8eff;
+  --fs-accent-hover: #82a0ff;
+  --fs-accent-soft: #8fb3d9;
+  --fs-accent-light: #b8d3f5;
+  --fs-accent-muted: rgba(107, 142, 255, 0.14);
+  --fs-accent-faint: rgba(107, 142, 255, 0.08);
+
+  // ---------------------------------------------------------------- Textos
+  --fs-text-primary: #e8eef7;
+  --fs-text-secondary: #91a1b8;
+  --fs-text-muted: #71839b;
+  --fs-text-inverse: #07111f;
+
+  // ------------------------------------------------------------ Semanticas
+  --fs-success: #48c6ad;
+  --fs-success-muted: rgba(72, 198, 173, 0.12);
+  --fs-danger: #e58b93;
+  --fs-danger-muted: rgba(229, 139, 147, 0.12);
+  --fs-warning: #d9b779;
+  --fs-warning-muted: rgba(217, 183, 121, 0.12);
+  --fs-info: #8fb3d9;
+  --fs-info-muted: rgba(143, 179, 217, 0.12);
+
+  // ------------------------------------------------------------ Tipografia
+  --fs-font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  --fs-font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+  --fs-text-xs: 0.75rem;
+  --fs-text-sm: 0.8125rem;
+  --fs-text-base: 0.9375rem;
+  --fs-text-md: 1rem;
+  --fs-text-lg: 1.125rem;
+  --fs-text-xl: 1.375rem;
+  --fs-text-2xl: 1.75rem;
+  --fs-text-3xl: 2.25rem;
+  --fs-leading-tight: 1.25;
+  --fs-leading-normal: 1.55;
+
+  // ----------------------------------------------------------------- Raios
+  --fs-radius-xs: 3px;
+  --fs-radius-sm: 5px;
+  --fs-radius-md: 8px;
+  --fs-radius-lg: 12px;
+  --fs-radius-pill: 999px;
+
+  // -------------------------------------------------------------- Espacamento
+  --fs-space-1: 0.25rem;
+  --fs-space-2: 0.5rem;
+  --fs-space-3: 0.75rem;
+  --fs-space-4: 1rem;
+  --fs-space-5: 1.5rem;
+  --fs-space-6: 2rem;
+  --fs-space-7: 2.5rem;
+  --fs-space-8: 3rem;
+
+  // ----------------------------------------------------------------- Layout
+  --fs-sidebar-width: 252px;
+  --fs-sidebar-width-collapsed: 76px;
+  --fs-topbar-height: 64px;
+  --fs-content-max-width: 1480px;
+
+  // -------------------------------------------------------------- Profundidade
+  --fs-shadow-card: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 28px -22px rgba(0, 0, 0, 0.85);
+  --fs-shadow-raised: 0 2px 6px rgba(0, 0, 0, 0.36), 0 18px 40px -28px rgba(0, 0, 0, 0.9);
+  --fs-shadow-overlay: 0 24px 60px -20px rgba(0, 0, 0, 0.75);
+
+  // --------------------------------------------------------------- Transicoes
+  --fs-transition-fast: 120ms cubic-bezier(0.4, 0, 0.2, 1);
+  --fs-transition-base: 180ms cubic-bezier(0.4, 0, 0.2, 1);
+  --fs-transition-slow: 280ms cubic-bezier(0.22, 1, 0.36, 1);
+
+  --fs-z-header: 100;
+  --fs-z-sidebar: 110;
+  --fs-z-overlay: 1000;
+}

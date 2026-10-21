@@ -1,0 +1,76 @@
+server:
+  port: ${SERVER_PORT:8080}
+  error:
+    include-message: always
+
+spring:
+  application:
+    name: finansight-backend
+
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/finansight}
+    username: ${DB_USER:finansight}
+    password: ${DB_PASSWORD:finansight}
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 2
+      connection-timeout: 30000
+
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+        format_sql: false
+    show-sql: false
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    locations: classpath:db/migration
+
+  jackson:
+    default-property-inclusion: non_null
+    serialization:
+      write-dates-as-timestamps: false
+
+  mvc:
+    problemdetails:
+      enabled: false
+
+finansight:
+  security:
+    # Nunca comite um segredo real: use a variavel de ambiente FINANSIGHT_JWT_SECRET.
+    jwt-secret: ${FINANSIGHT_JWT_SECRET:finansight-local-development-secret-change-me-please-0123456789}
+    jwt-expiration-minutes: ${FINANSIGHT_JWT_EXPIRATION_MINUTES:720}
+    allowed-origins: ${FINANSIGHT_ALLOWED_ORIGINS:http://localhost:4200}
+  demo:
+    # Quando habilitado, cria o usuário de demonstração (demo@finansight.app / demo1234).
+    enabled: ${FINANSIGHT_DEMO_ENABLED:false}
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: method
+    tags-sorter: alpha
+    doc-swagger-ui: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: never
+
+logging:
+  level:
+    root: INFO
+    com.finansight: INFO
+    org.flywaydb: INFO

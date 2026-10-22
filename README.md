@@ -16,6 +16,16 @@ interface Angular e um design system autoral escuro chamado **Midnight**.
 
 </div>
 
+<p align="center">
+  <a href="docs/03-dashboard.png">
+    <img src="docs/hero.png" alt="FinanSight — dashboard no desktop e no celular" width="100%">
+  </a>
+</p>
+
+<p align="center">
+  <em>Dashboard do FinanSight em <b>desktop</b> e <b>mobile</b>, com o design system Midnight.</em>
+</p>
+
 ---
 
 ## Índice
@@ -25,6 +35,7 @@ interface Angular e um design system autoral escuro chamado **Midnight**.
 - [Arquitetura](#arquitetura)
 - [Stack tecnológica](#stack-tecnológica)
 - [Funcionalidades](#funcionalidades)
+- [Capturas de tela](#capturas-de-tela)
 - [Identidade visual — Midnight](#identidade-visual--midnight)
 - [Regras de negócio](#regras-de-negócio)
 - [Modelo de dados](#modelo-de-dados)
@@ -35,7 +46,6 @@ interface Angular e um design system autoral escuro chamado **Midnight**.
 - [Segurança](#segurança)
 - [Decisões técnicas](#decisões-técnicas)
 - [Estrutura do projeto](#estrutura-do-projeto)
-- [Capturas de tela](#capturas-de-tela)
 - [Solução de problemas](#solução-de-problemas)
 - [Limitações conhecidas](#limitações-conhecidas)
 - [Roadmap](#roadmap)
@@ -190,6 +200,14 @@ flowchart TD
 - Guardas de rota no front-end **e** validação de autorização no back-end.
 - Respostas da API nunca incluem hash de senha.
 
+<p align="center">
+  <a href="docs/01-login.png">
+    <img src="docs/01-login.png" alt="Tela de login do FinanSight" width="620">
+  </a>
+</p>
+
+<p align="center"><sub>Tela de login com acesso direto à conta de demonstração.</sub></p>
+
 ### Dashboard
 
 - Saudação personalizada e seletor de período (mês, 3/6/12 meses, personalizado).
@@ -210,6 +228,14 @@ flowchart TD
   categoria, data e observações.
 - Exclusão com modal de confirmação.
 - Estados de carregamento, sucesso e erro.
+
+<p align="center">
+  <a href="docs/11-dialog-transacao.png">
+    <img src="docs/11-dialog-transacao.png" alt="Diálogo de nova transação" width="820">
+  </a>
+</p>
+
+<p align="center"><sub>Diálogo de nova transação: o tipo define as categorias disponíveis.</sub></p>
 
 ### Categorias
 
@@ -252,6 +278,67 @@ flowchart TD
 
 ---
 
+## Capturas de tela
+
+Todas as imagens abaixo são prints reais da aplicação em execução, com a conta
+de demonstração (`demo@finansight.app`) já populada com 6 meses de histórico.
+
+<p align="center">
+  <a href="docs/03-dashboard.png">
+    <img src="docs/gallery-principal.png" alt="Dashboard, transações, orçamentos e metas do FinanSight" width="100%">
+  </a>
+</p>
+
+<p align="center">
+  <a href="docs/01-login.png">
+    <img src="docs/gallery-secundaria.png" alt="Login, relatórios, nova transação e configurações do FinanSight" width="100%">
+  </a>
+</p>
+
+### Layout responsivo
+
+<table>
+  <tr>
+    <td width="34%" align="center" valign="top">
+      <a href="docs/10-mobile-dashboard.png"><img src="docs/10-mobile-dashboard.png" alt="Dashboard em mobile" width="260"></a>
+      <br><sub><b>Mobile</b> — indicadores empilhados</sub>
+    </td>
+    <td width="33%" align="center" valign="top">
+      <a href="docs/05-categorias.png"><img src="docs/05-categorias.png" alt="Tela de categorias" width="100%"></a>
+      <br><sub><b>Categorias</b> — tipo único por categoria</sub>
+    </td>
+    <td width="33%" align="center" valign="top">
+      <a href="docs/12-sidebar-recolhido.png"><img src="docs/12-sidebar-recolhido.png" alt="Menu lateral recolhido" width="100%"></a>
+      <br><sub><b>Menu recolhido</b> — mais espaço para o conteúdo</sub>
+    </td>
+  </tr>
+</table>
+
+### Arquivos de imagem
+
+| Tela | Arquivo |
+| --- | --- |
+| Login | `docs/01-login.png` |
+| Cadastro | `docs/02-cadastro.png` |
+| Dashboard | `docs/03-dashboard.png` |
+| Transações | `docs/04-transacoes.png` |
+| Categorias | `docs/05-categorias.png` |
+| Orçamentos | `docs/06-orcamentos.png` |
+| Metas financeiras | `docs/07-metas.png` |
+| Relatórios | `docs/08-relatorios.png` |
+| Configurações | `docs/09-configuracoes.png` |
+| Layout mobile | `docs/10-mobile-dashboard.png` |
+| Diálogo de nova transação | `docs/11-dialog-transacao.png` |
+| Menu lateral recolhido | `docs/12-sidebar-recolhido.png` |
+| Banner do README | `docs/hero.png` |
+| Galeria principal | `docs/gallery-principal.png` |
+| Galeria secundária | `docs/gallery-secundaria.png` |
+| Paleta do design system | `docs/palette.png` |
+
+> As notas técnicas de arquitetura estão em [`docs/arquitetura.md`](docs/arquitetura.md).
+
+---
+
 ## Identidade visual — Midnight
 
 A direção de arte **Midnight** foi desenhada para o FinanSight e não reaproveita
@@ -280,6 +367,10 @@ nenhum template pronto. O tema padrão do PrimeNG (Aura) é reescrito token a to
 
 As cores semânticas aparecem **apenas** quando há informação a transmitir.
 Nenhum cartão recebe cor decorativa própria.
+
+<p align="center">
+  <img src="docs/palette.png" alt="Paleta de cores do design system Midnight" width="100%">
+</p>
 
 ### Marca
 
@@ -820,27 +911,6 @@ finansight/
 ├── LICENSE
 └── README.md
 ```
-
----
-
-## Capturas de tela
-
-| Tela | Arquivo |
-| --- | --- |
-| Login | `docs/01-login.png` |
-| Cadastro | `docs/02-cadastro.png` |
-| Dashboard | `docs/03-dashboard.png` |
-| Transações | `docs/04-transacoes.png` |
-| Categorias | `docs/05-categorias.png` |
-| Orçamentos | `docs/06-orcamentos.png` |
-| Metas financeiras | `docs/07-metas.png` |
-| Relatórios | `docs/08-relatorios.png` |
-| Configurações | `docs/09-configuracoes.png` |
-| Layout mobile | `docs/10-mobile-dashboard.png` |
-| Diálogo de nova transação | `docs/11-dialog-transacao.png` |
-| Menu lateral recolhido | `docs/12-sidebar-recolhido.png` |
-
-> As notas técnicas de arquitetura estão em [`docs/arquitetura.md`](docs/arquitetura.md).
 
 ---
 
